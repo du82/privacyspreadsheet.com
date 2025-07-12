@@ -5,7 +5,9 @@ The Privacy Spreadsheet HTML and raw CSV data
 If you see errors or would like something added, please **submit an issue here**.\
 Complaining on Reddit or Twitter is not effective as I do not use social media.
 
-# MESSAGING APP PRIVACY & SECURITY SCORES
+Result of [this scoring algorithm](score.js):
+
+MESSAGING APP PRIVACY & SECURITY SCORES (Updated Tiers)
 
 Rank | App Name        | Score | Percentage | Tier
 -----|-----------------|-------|------------|----------
@@ -27,13 +29,13 @@ Rank | App Name        | Score | Percentage | Tier
 16   | Amino           | 5.0/23 | 21.7%      | Bad
 17   | Google Messages | 5.0/23 | 21.7%      | Bad
 18   | GroupMe         | 5.0/23 | 21.7%      | Bad
-19   | Instagram DMs   | 4.5/23 | 19.6%      | Bad
-20   | FB Messenger    | 4.5/23 | 19.6%      | Bad
-21   | Teams           | 4.5/23 | 19.6%      | Bad
-22   | LINE            | 4.0/23 | 17.4%      | Bad
-23   | SMS             | 4.0/23 | 17.4%      | Bad
-24   | Discord         | 3.0/23 | 13.0%      | Bad
-25   | New ICQ         | 2.5/23 | 10.9%      | Bad
-26   | Snapchat        | 2.5/23 | 10.9%      | Bad
-27   | Grindr DMs      | 2.0/23 | 8.7%       | Bad
-28   | Kik             | 2.0/23 | 8.7%       | Bad
+19   | Instagram DMs   | 4.5/23 | 19.6%      | Very Bad
+20   | FB Messenger    | 4.5/23 | 19.6%      | Very Bad
+21   | Teams           | 4.5/23 | 19.6%      | Very Bad
+22   | LINE            | 4.0/23 | 17.4%      | Very Bad
+23   | SMS             | 4.0/23 | 17.4%      | Very Bad
+24   | Discord         | 3.0/23 | 13.0%      | Very Bad
+25   | New ICQ         | 2.5/23 | 10.9%      | Very Bad
+26   | Snapchat        | 2.5/23 | 10.9%      | Very Bad
+27   | Grindr DMs      | 2.0/23 | 8.7%       | Very Bad
+28   | Kik             | 2.0/23 | 8.7%       | Very Bad
