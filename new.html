@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Light mode styles (default) */
+        .container {
+            overflow: auto;
+            position: relative;
+            max-width: 100%;
+            max-height: 94vh;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: max-content;
+            min-width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            min-width: 120px;
+            background: #ffffff;
+        }
+
+        th {
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 20;
+        }
+
+        .sticky-col {
+            position: sticky;
+            left: 0;
+            z-index: 10;
+            background: #ffffff;
+            border-right: 2px solid #aaa;
+            text-align: left;
+        }
+
+        .sticky-col.sticky-header {
+            z-index: 30;
+            text-align: center;
+        }
+
+        .donation-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .monero-address {
+            cursor: pointer;
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .monero-address:hover {
+            background-color: #e5e5e5;
+        }
+
+        /* Light mode background colors */
+        .bg-red { background-color: #ffcccc; }
+        .bg-green { background-color: #ccffcc; }
+        .bg-yellow { background-color: #ffffcc; }
+        .bg-purple { background-color: #e6ccff; }
+
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            .container {
+                background-color: #1a1a1a;
+                color: #ffffff;
+            }
+
+            body {
+                background-color: #363636;
+                color: #fff;
+            }
+
+            table {
+                border-color: #404040;
+            }
+
+            th, td {
+                border-color: #404040;
+                background: #2d2d2d;
+            }
+
+            th {
+                background: #363636;
+            }
+
+            .sticky-col {
+                background: #2d2d2d;
+                border-right-color: #505050;
+            }
+
+            .sticky-col.sticky-header {
+                background: #363636;
+            }
+
+            .monero-address {
+                background-color: #363636;
+                color: #ffffff;
+            }
+
+            .monero-address:hover {
+                background-color: #404040;
+            }
+
+            /* Dark mode background colors - more muted versions */
+            .bg-red { background-color: #662929; }
+            .bg-green { background-color: #2d4d2d; }
+            .bg-yellow { background-color: #4d4d2d; }
+            .bg-purple { background-color: #3d2d4d; }
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            .container {
+                color: #ffffff;
+                background-color: #000000;
+            }
+
+            th, td {
+                border-color: #ffffff;
+            }
+
+            .monero-address {
+                border: 1px solid #ffffff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="donation-container">
+        <p style="margin: 0;">Please consider donating Monero (click to copy):</p>
+        <div class="monero-address" onclick="navigator.clipboard.writeText(this.textContent)" title="Click to copy">8Aic2y8hUvzTJhhnV4jqZocMzJ7eSjXx9Q2vgMcxQ4zh5aC81mPVmVTQYZppiwJGyK26FRms3fMSGhT2sEh5vZrBJPKtYQp</div>
+    </div>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="sticky-col sticky-header">Feature</th>
+                    <th><a href="https://aminoapps.com">Amino</a></th>
+                    <th><a href="https://briarproject.org">Briar</a></th>
+                    <th><a href="https://cabal.chat">Cabal</a></th>
+                    <th><a href="https://cwtch.im">Cwtch</a></th>
+                    <th><a href="https://discord.com">Discord</a></th>
+                    <th><a href="https://usedust.com">Dust</a></th>
+                    <th><a href="https://messages.google.com">Google Messages</a></th>
+                    <th><a href="https://https://help.grindr.com/hc/en-us/articles/1500008680921-Chatting-with-other-profiles">Grindr DMs</a></th>
+                    <th><a href="https://groupme.com">GroupMe</a></th>
+                    <th><a href="https://support.apple.com/explore/messages">iMessage</a></th>
+                    <th><a href="https://about.instagram.com/features/direct">Instagram DMs</a></th>
+                    <th><a href="https://en.wikipedia.org/wiki/IRC">IRC</a></th>
+                    <th><a href="https://kik.com">Kik</a></th>
+                    <th><a href="https://line.me">LINE</a></th>
+                    <th><a href="https://matrix.org">Matrix</a></th>
+                    <th><a href="https://mattermost.com">Mattermost</a></th>
+                    <th><a href="https://messenger.com">FB Messenger</a></th>
+                    <th><a href="https://icq.com">New ICQ</a></th>
+                    <th><a href="https://revolt.chat">Revolt</a></th>
+                    <th><a href="https://getsession.org">Session</a></th>
+                    <th><a href="https://en.wikipedia.org/wiki/SMS">SMS</a></th>
+                    <th><a href="https://signal.org">Signal</a></th>
+                    <th><a href="https://simplex.chat">SimpleX Chat</a></th>
+                    <th><a href="https://snapchat.com">Snapchat</a></th>
+                    <th><a href="https://status.app">Status</a></th>
+                    <th><a href="https://telegram.org">Telegram</a></th>
+                    <th><a href="https://teams.com">Teams</a></th>
+                    <th><a href="https://threema.ch/en">Threema</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="sticky-col">Privacy Practices (<a href="https://github.com/du82/privacyspreadsheet.com/blob/main/score.js">algorithm src code</a>)</td>
+                    <td class="bg-red">Bad - 21.7%</td>
+                    <td class="bg-green">Very Good - 85%</td>
+                    <td class="bg-green">Very Good - 83%</td>
+                    <td class="bg-green">Very Good - 81%</td>
+                    <td class="bg-red">Very Bad - 13%</td>
+                    <td class="bg-red">Poor - 27%</td>
+                    <td class="bg-red">Bad - 21%</td>
+                    <td class="bg-red">Very Bad - 8%</td>
+                    <td class="bg-red">Bad - 21%</td>
+                    <td class="bg-red">Poor - 43%</td>
+                    <td class="bg-red">Very Bad - 19%</td>
+                    <td class="bg-yellow">Fair - 47%</td>
+                    <td class="bg-red">Very bad - 8%</td>
+                    <td class="bg-red">Very Bad - 17%</td>
+                    <td class="bg-yellow">Fair - 52%</td>
+                    <td class="bg-red">Poor - 32%</td>
+                    <td class="bg-red">Very Bad - 19%</td>
+                    <td class="bg-red">Very Bad - 10%</td>
+                    <td class="bg-red">Poor - 39%</td>
+                    <td class="bg-yellow">Fair - 55%</td>
+                    <td class="bg-red">Very Bad - 17%</td>
+                    <td class="bg-green">Good - 69%</td>
+                    <td class="bg-green">Excellent - 100%</td>
+                    <td class="bg-red">Very Bad - 10%</td>
+                    <td class="bg-green">Good - 61%</td>
+                    <td class="bg-red">Bad - 26%</td>
+                    <td class="bg-red">Very Bad - 19%</td>
+                    <td class="bg-yellow">Fair - 46%</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Recommended for private communication?</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">End to end encrypted by default</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">End to end encryption is available</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Voice/video calls are end to end encrypted</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Utilizes Perfect Forward Secrecy</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Data is encrypted in transit</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Data is encrypted at rest (server side)</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Not everything</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Data is encrypted at rest (client side)</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">Usually not</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Decentralized network</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-yellow">Somewhat</td>
+                    <td class="bg-yellow">Somewhat</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-yellow">Somewhat</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Dependant on DNS</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Requires global identity</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                    <td class="bg-yellow">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Profile has immutable attributes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Email required for signup</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Phone required for signup</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Jurisdiction</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-red">China</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">USA / China</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-red">Japan</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-red">Russia</td>
+                    <td class="bg-red">UK</td>
+                    <td class="bg-yellow">Switzerland</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-green">Decentralized</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-yellow">Ambiguous</td>
+                    <td class="bg-yellow">Ambiguous</td>
+                    <td class="bg-red">USA</td>
+                    <td class="bg-yellow">Switzerland</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Provider actively feeds data to law enforcement</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Provider complies with preservation requests</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Varies by provider</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Uncertain</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Client scans users photo/video library</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Client removes image metadata</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Client logs users location</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Can be hosted on an airgapped network</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Deleted messages are removed immediately</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">Not guaranteed</td>
+                    <td class="bg-red">Not guaranteed</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Recieved messages are removed from server</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-green">Yes</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col" colspan="27">What can the apps hand to police? | This assumes that you've entered the associated info into the service if possible, otherwise marked as Not Applicable</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">IP address</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Real name</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Username</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Phone number</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Provider specific</td>
+                    <td class="bg-yellow">Provider specific</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Email address</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Provider specific</td>
+                    <td class="bg-yellow">Provider specific</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Message contents</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Crypto wallets</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Profile pictures</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Account creation date</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Account last active timestamp</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Potentially</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Billing details</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Groups that you manage</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Groups that you are a member of</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Channels / broadcast rooms you are a member of</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">People you talk to</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">People you've blocked</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">People who have blocked you</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                </tr>
+
+                <!-- Adversary section -->
+                <tr>
+                    <td class="sticky-col" colspan="27">What can an adversary find on their own? | This assumes you're using the default configuration, never intract with their sockpuppet accounts, such as adding them as a friend or sending them messages</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">IP address</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Exploitable</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Exploitable</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-yellow">Sometimes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Real name</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+                <tr>
+                    <td class="sticky-col">Username</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-green">No</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-purple">N/A</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                    <td class="bg-red">Yes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
