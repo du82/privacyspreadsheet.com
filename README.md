@@ -7,7 +7,7 @@ Complaining on Reddit or Twitter is not effective as I do not use social media.
 
 Result of [this scoring algorithm](score.js):
 
-MESSAGING APP PRIVACY & SECURITY SCORES (Updated Tiers)
+MESSAGING APP PRIVACY & SECURITY PRACTICES
 
 Rank | App Name        | Score | Percentage | Tier
 -----|-----------------|-------|------------|----------
