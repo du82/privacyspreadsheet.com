@@ -1,13 +1,4 @@
-// All messaging apps from the table
-const apps = [
-    'Amino', 'Briar', 'Cabal', 'Cwtch', 'Discord', 'Dust', 'Google Messages', 
-    'Grindr DMs', 'GroupMe', 'iMessage', 'Instagram DMs', 'IRC', 'Kik', 'LINE',
-    'Matrix', 'Mattermost', 'FB Messenger', 'New ICQ', 'Revolt', 'Session', 
-    'SMS', 'Signal', 'SimpleX Chat', 'Snapchat', 'Status', 'Telegram', 'Teams', 'Threema'
-];
-
-// Extract data from the table systematically
-// Based on the HTML table data, I'll score each app across key criteria
+// All messaging apps data
 const appData = {
     'Amino': {
         recommended: false, e2e_default: false, e2e_available: false, voice_encrypted: false,
@@ -260,7 +251,7 @@ for (const [app, data] of Object.entries(appData)) {
 // Sort by percentage score
 results.sort((a, b) => b.percentage - a.percentage);
 
-console.log('MESSAGING APP PRIVACY & SECURITY SCORES\n');
+console.log('MESSAGING APP PRIVACY & SECURITY SCORES (Updated Tiers)\n');
 console.log('Rank | App Name        | Score | Percentage | Tier');
 console.log('-----|-----------------|-------|------------|----------');
 
@@ -271,7 +262,8 @@ results.forEach((result, index) => {
     else if (result.percentage >= 60) tier = 'Good';
     else if (result.percentage >= 45) tier = 'Fair';
     else if (result.percentage >= 30) tier = 'Poor';
-    else tier = 'Bad';
+    else if (result.percentage >= 20) tier = 'Bad';
+    else tier = 'Very Bad';
     
     const rank = (index + 1).toString().padStart(2);
     const name = result.app.padEnd(15);
