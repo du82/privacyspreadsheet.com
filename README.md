@@ -1,6 +1,9 @@
 # privacyspreadsheet.com
 The Privacy Spreadsheet HTML and raw CSV data
 
+## Public Domain Notice
+This project has been released into the public domain under [the Unlicense](LICENSE). You are forever free to use, modify, and distribute this data without any restrictions. I wanted to give something back to the community which has taught me so much and helped those I care about stay safe.
+
 ## Note to contributors
 If you see errors or would like something added, please **submit an issue here**.\
 Complaining on Reddit or Twitter is not effective as I do not use social media.
